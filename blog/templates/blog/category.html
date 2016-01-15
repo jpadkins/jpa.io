@@ -12,8 +12,8 @@
                 <h1 class="text-center animated fadeIn">Jacob Adkins's Blog</h1>
                 <hr class="animated fadeInLeft">
                 {% for cat in categories %}
-                <h3 class="text-center animated fadeIn" href="{% url 'blog:category' cat.slug %}">{{ cat }}</h3>
-                {% endfor %}
+                <h3 class="text-center animated fadeIn{% if cat.slug == category_slug %} active_cat{% endif %}" href="{% url 'blog:category' cat.slug %}">{{ cat }}</h3>
+                {% endfor %} 
                 <br>
             </div>
 
