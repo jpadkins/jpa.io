@@ -1,0 +1,5 @@
+Django==1.9.1
+django-bower==5.0.4
+django-static-precompiler==1.2
+Pillow==3.1.0
+six==1.10.0
