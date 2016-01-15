@@ -140,8 +140,8 @@ STATICFILES_FINDERS = [
 BOWER_COMPONENTS_ROOT = BASE_DIR + '/components' 
 
 BOWER_INSTALLED_APPS = (
-    'jquery#1.9',
-    'purecss',
+    'jquery#2.1.4',
+    'bootstrap',
     'fontawesome',
     'animate.css',
 )
