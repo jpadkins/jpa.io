@@ -6,26 +6,26 @@
         <div class="row">
         
             <div class="col-md-3" id="sidebar"> 
-                <br><br>
-                <img class="animated fadeIn" src="{% static 'blog/images/jacob.svg' %}" id="jacob"> 
                 <br>
-                <h1 class="text-center animated fadeIn">Jacob Adkins's Blog</h1>
+                <br>
+                <h1 class="text-center animated fadeIn" href="{% url 'blog:index' %}">Jacob Adkins' Blog</h1>
                 <hr class="animated fadeInLeft">
                 {% for cat in categories %}
-                <h3 class="text-center animated fadeIn{% if cat.slug == category_slug %} active_cat{% endif %}" href="{% url 'blog:category' cat.slug %}">{{ cat }}</h3>
+                <h3 class="text-center animated fadeIn{% if cat.name == current_category.name %} active_cat{% endif %}" href="{% url 'blog:category' cat.slug %}">{{ cat }}</h3>
                 {% endfor %} 
                 <br>
             </div>
 
             <div class="col-md-9 offset-md-3 animated fadeIn" id="content">
-                {% if article %}
-                {% autoescape off %}
-                <h1 class="text-center animated fadeInDown" id="article_title">{{ article.title }}</h3>
-                <br>
-                <div id="article_body" class="animated fadeInUp">{{ article.body }}</div>
-                <span id="article_footer">published: {{ article.pub_date }}</span>
-                {% endautoescape %}
-                {% endif %}
+                <h1 id="list_label" class="text-center">Recent Articles For {{ current_category.name }}</h1>
+                {% for article in articles %}
+                <div class="article_list" href="{% url 'blog:article' article.category.slug article.slug %}">
+                    <hr> 
+                    <h1>{{ article.title }}</h1>
+                    <span>{{ article.pub_date }}</span>
+                    <hr>
+                </div>
+                {% endfor %} 
             </div>
         
         </div>

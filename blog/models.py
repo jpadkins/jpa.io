@@ -9,7 +9,6 @@ whether or not it is a draft.
 """
 class Article(models.Model):
     title = models.CharField(max_length=200)
-    slug = models.SlugField()
     body = models.TextField()
     pub_date = models.DateTimeField('date published')
     is_draft = models.BooleanField(default=True) 
@@ -31,7 +30,6 @@ sidebar tabs and for sorting purposes.
 """
 class Category(models.Model):
     name = models.CharField(max_length=200)
-    slug = models.SlugField()
    
     def slug(self):
         return slugify(self.name)

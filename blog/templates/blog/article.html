@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+        
+            <div class="col-md-3" id="sidebar"> 
+                <br>
+                <br>
+                <h1 class="text-center animated fadeIn" href="{% url 'blog:index' %}">Jacob Adkins' Blog</h1>
+                <hr class="animated fadeInLeft">
+                {% for cat in categories %}
+                <h3 class="text-center animated fadeIn{% if cat.slug == category_slug %} active_cat{% endif %}" href="{% url 'blog:category' cat.slug %}">{{ cat }}</h3>
+                {% endfor %} 
+                <br>
+            </div>
+
+            <div class="col-md-9 offset-md-3 animated fadeIn" id="content">
+                {% if article %}
+                {% autoescape off %}
+                <h1 class="text-center animated fadeInDown" id="article_title">{{ article.title }}</h3>
+                <br>
+                <div id="article_body" class="animated fadeInUp">{{ article.body }}</div>
+                <span id="article_footer">published: {{ article.pub_date }}</span>
+                {% endautoescape %}
+                {% endif %}
+            </div>
+        
+        </div>
+    </div>
+{% endblock content %}

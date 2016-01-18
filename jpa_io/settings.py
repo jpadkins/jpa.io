@@ -144,6 +144,7 @@ BOWER_INSTALLED_APPS = (
     'bootstrap',
     'fontawesome',
     'animate.css',
+    'highlightjs',
 )
 
 # Path to static images folder for use in blog app

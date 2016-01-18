@@ -29,13 +29,16 @@
         <!-- JAVASCRIPT LIBRARIES -->
         <script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'highlightjs/highlight.pack.min.js' %}"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
         <!-- CSS LIBRARIES -->
         <link rel="stylesheet" type="text/css" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'animate.css/animate.min.css' %}"> 
-        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}"></script>
-        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap-theme.min.css' %}"></script> 
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap-theme.min.css' %}"> 
+        <link rel="stylesheet" href="{% static 'highlightjs/styles/tomorrow-night-blue.css' %}">
         <!-- LOCAL COFFEESCRIPT -->
-        <script type="text/javascript" src="{% static "blog/coffeescript/index.coffee"|compile %}"></script>
+        <script type="text/javascript" src="{% static "blog/coffeescript/main.coffee"|compile %}"></script>
         <!-- LOCAL STYLUS -->
         <link rel="stylesheet" type="text/css" href="{% static "blog/stylus/style.styl"|compile %}">
     </head>
